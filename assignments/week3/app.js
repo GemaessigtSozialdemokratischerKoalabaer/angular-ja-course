@@ -50,7 +50,7 @@ function MenuSearchService($http, ApiBasePath, $q) {
         var menuItems = result.data.menu_items;
         var lookFor = itemSelector.toLowerCase();
         for(var i=0; i < menuItems.length; i++) {
-          if(menuItems[i].name.toLowerCase().indexOf(lookFor) !== -1) {
+          if(menuItems[i].description.toLowerCase().indexOf(lookFor) !== -1) {
             items.menu_items.push(menuItems[i]);
           }
         }
