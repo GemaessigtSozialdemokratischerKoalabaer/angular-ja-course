@@ -1,0 +1,9 @@
+<a ui-sref="home">Home</a> &lt; <a ui-sref="categories">Categories</a> &lt; <span>Items</span>
+<div class="form-group">
+  <h3>All Items in category</h3>
+<ul>
+  <li ng-repeat="item in itemList.items">
+    {{ item.name }}: {{ item.description}}
+  </li>
+</ul>
+</div>
