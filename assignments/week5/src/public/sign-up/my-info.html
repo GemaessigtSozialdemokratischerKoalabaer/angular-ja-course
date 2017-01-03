@@ -1,0 +1,21 @@
+<div class="container">
+  <span ng-if="!myInfoCtrl.userDataSet">
+    Not Signed Up Yet. <a ui-sref="public.sign-up">Sign up Now!</a>
+  </span>
+  <span ng-if="myInfoCtrl.userDataSet">
+    <div class="row">
+      <div class="col-sm-5">
+        Your Data:<br>
+        Firstname: {{ myInfoCtrl.user.firstname }}<br>
+        Lastname: {{ myInfoCtrl.user.lastname }}<br>
+        Email: {{ myInfoCtrl.user.email }}<br>
+        Telephone: {{ myInfoCtrl.user.phone }}
+      </div>
+      <div class="col-sm-7">
+        Your Favorite Dish: {{ myInfoCtrl.user.title}}<br>
+        {{ myInfoCtrl.user.description }}<br>
+        <img src="{{myInfoCtrl.dishPictureUrl}}"/>
+      </div>
+    </div>
+  </span>
+</div>

@@ -1,0 +1,46 @@
+<div class="container">
+  <h2 class="text-center">
+        Sign up for the news letter.
+  </h2>
+    <form name="signUpForm" novalidate>
+      <div class="form-group">
+          <label for="Firstname">Firstname:</label>
+          <input class="sign-up" name="Firstname" ng-model="signUpCtrl.user.firstname" type="text"
+            size="50" required autofocus/>
+      </div>
+      <div class="form-group">
+          <label for="Lastname">Lastname:</label>
+          <input class="sign-up" name="Lastname" ng-model="signUpCtrl.user.lastname" type="text"
+            size="50" required/>
+      </div>
+      <div class="form-group">
+        <label for="Email">Email:</label>
+        <input class="sign-up" name="Email" ng-model="signUpCtrl.user.email" type="email"
+          size="50" required placeholder="name@domain"/>
+          <span ng-if="signUpForm.Email.$invalid && signUpForm.Email.$dirty">
+            Provide a vaild EMail address, e.g. name@domain.
+          </span>
+      </div>
+      <div class="form-group">
+        <label for="Phone">Telephone:</label>
+        <input class="sign-up" name="Phone" ng-model="signUpCtrl.user.phone" type="tel"
+          size="20" required/>
+      </div>
+      <div class="form-group">
+          <label for="dish">You favorit Dish:</label>
+          <input class="sign-up" name="dish" ng-model="signUpCtrl.user.dish" type="text"
+            size="10" required
+            dish-validation/>
+            <span ng-if="signUpForm.dish.$invalid && signUpForm.dish.$dirty">
+              {{ signUpForm.dish.$viewValue }} is not a valid menu number.
+            </span>
+      </div>
+      <button class="btn btn-default"
+          ng-disabled="signUpForm.$invalid"
+          ng-click="signUpCtrl.submit()">Submit
+      </button>
+      <div ng-if="signUpCtrl.stored">
+        Your data have been stored.
+      </div>
+    </form>
+</div>
