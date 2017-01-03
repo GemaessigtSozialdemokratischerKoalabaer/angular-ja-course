@@ -1,6 +1,11 @@
 <div class="container">
   <h2 class="text-center">
+    <div ng-if="!signUpCtrl.stored">
         Sign up for the news letter.
+    </div>
+    <div ng-if="signUpCtrl.stored">
+        Your registered data for the news letter.
+    </div>
   </h2>
     <form name="signUpForm" novalidate>
       <div class="form-group">
@@ -39,7 +44,7 @@
           ng-disabled="signUpForm.$invalid"
           ng-click="signUpCtrl.submit()">Submit
       </button>
-      <div ng-if="signUpCtrl.stored">
+      <div ng-if="signUpCtrl.submitted">
         Your data have been stored.
       </div>
     </form>

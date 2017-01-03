@@ -20,10 +20,13 @@ SignUpController.$inject = ['MenuService', 'SignUpService'];
 function SignUpController(MenuService, SignUpService) {
   var $ctrl = this;
   $ctrl.user = SignUpService.getUser();
+  $ctrl.stored = $ctrl.user.firstname.length != 0;
+  $ctrl.submitted = false;
 
   $ctrl.submit = function () {
     SignUpService.setUser($ctrl.user);
     $ctrl.stored = true;
+    $ctrl.submitted = true;
   };
 
   $ctrl.checkDish = function (value) {
