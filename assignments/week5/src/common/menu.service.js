@@ -29,7 +29,7 @@ function MenuService($http, ApiPath) {
 
   service.checkMenuItem = function (itemShortName) {
     console.log('call for menu item');
-    return $http.get(ApiPath + '/images/' + itemShortName + '.json');
+    return $http.get(ApiPath + '/menu_items/' + itemShortName + '.json');
   };
 
 }
